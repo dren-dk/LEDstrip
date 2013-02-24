@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 23 Feb 2013 09:35:47 PM CET
+EESchema Schematic File Version 2  date Sun 24 Feb 2013 10:43:36 PM CET
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -32,13 +32,14 @@ LIBS:pca9685
 LIBS:irlts6242
 LIBS:atmega328p-a
 LIBS:atmel
+LIBS:ledctrl-cache
 EELAYER 25  0
 EELAYER END
 $Descr A4 11700 8267
 encoding utf-8
 Sheet 2 2
 Title ""
-Date "23 feb 2013"
+Date "24 feb 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -123,46 +124,46 @@ Wire Wire Line
 Connection ~ 5900 2600
 Connection ~ 5900 3000
 $Comp
-L C C?
+L C C3
 U 1 1 51290E89
 P 6700 2800
-F 0 "C?" H 6750 2900 50  0000 L CNN
+F 0 "C3" H 6750 2900 50  0000 L CNN
 F 1 "100nF" H 6750 2700 50  0000 L CNN
 	1    6700 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C?
+L C C2
 U 1 1 51290E84
 P 6300 2800
-F 0 "C?" H 6350 2900 50  0000 L CNN
+F 0 "C2" H 6350 2900 50  0000 L CNN
 F 1 "100nF" H 6350 2700 50  0000 L CNN
 	1    6300 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C?
+L C C1
 U 1 1 51290E7C
 P 5900 2800
-F 0 "C?" H 5950 2900 50  0000 L CNN
+F 0 "C1" H 5950 2900 50  0000 L CNN
 F 1 "100nF" H 5950 2700 50  0000 L CNN
 	1    5900 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L +3.3V #PWR?
+L +3.3V #PWR063
 U 1 1 51290E72
 P 5350 2600
-F 0 "#PWR?" H 5350 2560 30  0001 C CNN
+F 0 "#PWR063" H 5350 2560 30  0001 C CNN
 F 1 "+3.3V" H 5350 2710 30  0000 C CNN
 	1    5350 2600
 	1    0    0    -1  
 $EndComp
 $Comp
-L +12V #PWR?
+L +12V #PWR064
 U 1 1 51290E68
 P 1250 1450
-F 0 "#PWR?" H 1250 1400 20  0001 C CNN
+F 0 "#PWR064" H 1250 1400 20  0001 C CNN
 F 1 "+12V" H 1250 1550 30  0000 C CNN
 	1    1250 1450
 	1    0    0    -1  
@@ -180,8 +181,8 @@ AR Path="/4FDA311D/4FDA284E" Ref="#PWR02"  Part="1"
 AR Path="/4FDA310B/4FDA284E" Ref="#PWR04"  Part="1" 
 AR Path="/4FDA30F5/4FDA284E" Ref="#PWR06"  Part="1" 
 AR Path="/4FDA30E3/4FDA284E" Ref="#PWR08"  Part="1" 
-AR Path="/51290DEE/4FDA284E" Ref="#PWR010"  Part="1" 
-F 0 "#PWR010" H 3050 3550 30  0001 C CNN
+AR Path="/51290DEE/4FDA284E" Ref="#PWR065"  Part="1" 
+F 0 "#PWR065" H 3050 3550 30  0001 C CNN
 F 1 "GND" H 3050 3480 30  0001 C CNN
 	1    3050 3550
 	1    0    0    -1  

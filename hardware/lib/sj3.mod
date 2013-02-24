@@ -1,0 +1,36 @@
+PCBNEW-LibModule-V1  Sun 24 Feb 2013 06:22:36 PM CET
+# encoding utf-8
+$INDEX
+sj3
+$EndINDEX
+$MODULE sj3
+Po 0 0 0 15 512A4C49 00000000 ~~
+Li sj3
+Sc 00000000
+AR 
+Op 0 0 0
+T0 0 -512 197 197 0 49 N V 21 N "sj3"
+T1 0 472 197 197 0 49 N I 21 N "VAL**"
+$PAD
+Sh "2" R 394 591 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 0 0
+$EndPAD
+$PAD
+Sh "3" R 394 591 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po 512 0
+$EndPAD
+$PAD
+Sh "1" R 394 591 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 0 ""
+Po -512 0
+$EndPAD
+$EndMODULE  sj3
+$EndLIBRARY
