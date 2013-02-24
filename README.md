@@ -24,8 +24,8 @@ To allow cheap and easy expansion, the i2c bus, OE, +3v3 and ground will be brou
 5 pin header and the pwm generator and power electronics will be located at one end of the
 board to allow the controller, power supply and radio part to be cut off.
 
-The input is a nRF24L01 radio module based on this chip:
-http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01
+The input is a nRF24L01+ radio module based on this chip:
+http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01P
 
 Many cheap radio modules with various antennae are avilable on ebay:
 http://www.ebay.com/sch/i.html?_trksid=p5197.m570.l1313&_nkw=nRF24L01&_sacat=0&_from=R40
