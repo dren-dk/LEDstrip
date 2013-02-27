@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+opendir D, '.';
+my @ps = reverse sort grep {/\.ps/} readdir D;
+closedir D;
+
+system("gs", '-dNOPAUSE', '-sDEVICE=pdfwrite', '-sOUTPUTFILE=ledctrl.pdf', '-dBATCH', @ps)
+	     and die "FAIL";

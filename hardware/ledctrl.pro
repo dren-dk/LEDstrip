@@ -1,4 +1,4 @@
-update=Sun 24 Feb 2013 08:06:40 PM CET
+update=Wed 27 Feb 2013 07:41:11 PM CET
 version=1
 last_client=pcbnew
 [general]
@@ -79,15 +79,15 @@ PadDrlX=0
 PadDimH=394
 PadDimV=591
 BoardThickness=630
-TxtPcbV=800
-TxtPcbH=600
-TxtModV=600
-TxtModH=600
-TxtModW=120
+TxtPcbV=276
+TxtPcbH=276
+TxtModV=394
+TxtModH=394
+TxtModW=67
 VEgarde=100
 DrawLar=150
 EdgeLar=150
-TxtLar=120
+TxtLar=67
 MSegLar=150
 LastNetListRead=ledctrl.net
 [pcbnew/libraries]
@@ -110,3 +110,5 @@ LibName15=/home/ff/projects/LEDstrip/hardware/lib/XT-60
 LibName16=/home/ff/projects/LEDstrip/hardware/lib/cp8-35
 LibName17=lib/sj3
 LibName18=lib/3mm-hole
+LibName19=lib/ohw-logo
+LibName20=lib/OSHW_logo
