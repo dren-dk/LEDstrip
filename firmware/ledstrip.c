@@ -37,6 +37,11 @@ int main(void) {
   DDRD  |= _BV(PD4);  // LED output
   led(1);
 
+  DDRD |= _BV(PD5);
+  DDRD |= _BV(PD6);
+  DDRB |= _BV(PB1);
+  DDRB |= _BV(PB2);
+
   //  initADC();
   muartInit();
 
@@ -48,6 +53,9 @@ int main(void) {
   // Set up timer 1 for fast PWM mode & the highest frequency available
   TCCR1A = _BV(WGM10);
   TCCR1B = _BV(WGM12) | _BV(CS10);
+
+  
+
 
   unsigned char frame = 0;
   while (1) {
