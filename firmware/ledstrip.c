@@ -17,7 +17,22 @@
 #include <avr/eeprom.h> 
 
 #include "mstdio.h"
-#include "adchelper.h"
+#include "i2cmaster.h"
+#include "pca9685.h"
+
+/*  
+ OC2B: PWM ~OE
+
+ OC1A: G
+ OC1B: R
+ OC0A: B
+ OC0B: W 
+
+ PB0: nRF24L01+ CSN
+ PD7: nRF24L01+ CE
+ 
+ PD4: ~LED 
+*/
 
 
 // We don't really care about unhandled interrupts.
@@ -37,6 +52,7 @@ int main(void) {
   DDRD  |= _BV(PD4);  // LED output
   led(1);
 
+  DDRD |= _BV(PD3);
   DDRD |= _BV(PD5);
   DDRD |= _BV(PD6);
   DDRB |= _BV(PB1);
@@ -54,14 +70,20 @@ int main(void) {
   TCCR1A = _BV(WGM10);
   TCCR1B = _BV(WGM12) | _BV(CS10);
 
+  i2c_init();
+  pca9685_init(0x80, PCA9685_FREQUENCY(1200UL));
   
-
 
   unsigned char frame = 0;
   while (1) {
-    mprintf(PSTR("F\n"));
-    led(frame++ & 1);
-    _delay_ms(200);
+    //mprintf(PSTR("F\n"));
+    led(frame++ & 15);
+    _delay_ms(10);
     wdt_reset();
+
+    pca9685_led_pwm(0x80, 0, frame);
+    pca9685_led_pwm(0x80, 1, 128-frame);
+    pca9685_led_pwm(0x80, 2, 255-frame);
+
   }
 }
