@@ -42,4 +42,8 @@ void pca9685_led_write(uint8_t i2c_addr, uint8_t led, uint16_t value);
 
 void pca9685_write_register(uint8_t i2c_addr, uint8_t register_addr, uint8_t value);
 
+unsigned int ciel10bit(unsigned char x);
+unsigned int ciel8bit(unsigned char x);
+
+
 #endif

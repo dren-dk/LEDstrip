@@ -34,6 +34,13 @@ const uint16_t CIEL12[] PROGMEM = {0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 18, 20, 21,
 #define LOWBYTE(x)  ( (uint8_t) (x & 0xFF) )
 
 
+unsigned int ciel10bit(unsigned char x) {
+  return PWM_TO_CIEL(x) >> 2;
+}
+
+unsigned int ciel8bit(unsigned char x) {
+  return PWM_TO_CIEL(x) >> 4;
+}
 
 /**
  * Initialize and Reset PCA9685 Chip
