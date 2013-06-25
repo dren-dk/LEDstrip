@@ -151,22 +151,18 @@ int main(void) {
   TCCR2A =  _BV(WGM20) |  _BV(WGM21); // Fast PWM
   TCCR2B = _BV(CS20); // Fastest clock source
 
-  TCCR2A |= _BV(COM2B1); // OC0B clear on match
+  TCCR2A |= _BV(COM2B1) | _BV(COM2B0); // OC0B clear on match
 
   DDRD  |= _BV(PD3);  // OC2B
-
-
 
   OCR0A = 0; // Blue
   OCR0B = 0; // White
   OCR1A = 0; // Green
   OCR1B = 0; // Red
-  OCR2B = 0; // Common output enable
-
+  OCR2B = 255; // Common output enable
 
   i2c_init();
-  pca9685_init(0x80, PCA9685_FREQUENCY(1200UL));
-  
+  pca9685_init(0x80, PCA9685_FREQUENCY(1200UL)); 
 
   setledpwm(ON_BOARD|0, 0);
   setledpwm(ON_BOARD|1, 0);
@@ -187,13 +183,18 @@ int main(void) {
     pca9685_led_pwm(0x80, 1, 128-frame);
     pca9685_led_pwm(0x80, 2, 255-frame);
     */
-    setledpwm(0, frame);
-    setledpwm(1, 128-frame);
-    setledpwm(2, 255-frame);
+    setledpwm(0, 255-frame);
+    setledpwm(1, frame);
+    setledpwm(2, frame >> 4);
 
     setledpwm(ON_BOARD|0, frame);
-    setledpwm(ON_BOARD|1, 128-frame);
-    setledpwm(ON_BOARD|2, 255-frame);
-    //setledpwm(ON_BOARD|3, 255-frame);
+    setledpwm(ON_BOARD|1, 255-frame);
+    setledpwm(ON_BOARD|2, frame>>4);
+    if (frame & 15) {
+      setledpwm(ON_BOARD|3, 0);
+    } else {
+      setledpwm(ON_BOARD|3, 255);
+    }
+    //setledpwm(ON_BOARD|4, frame);
   }
 }
